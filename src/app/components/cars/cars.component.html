@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Cars List</h2>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by make..."
+      [(ngModel)]="searchMake" />
+    <button class="btn btn-primary" (click)="onSearch()">Search</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Search by ID..."
+      [(ngModel)]="searchId" />
+    <button class="btn btn-info" (click)="onSearchById()">Search by ID</button>
+  </div>
+
+  <label for="sortField" class="form-label">Sort by:</label>
+  <select
+    id="sortField"
+    class="form-select mb-3"
+    [(ngModel)]="sortField"
+    (change)="onSort(sortField)">
+    <option value="make:asc">Make Ascending</option>
+    <option value="make:desc">Make Descending</option>
+    <option value="model:asc">Model Ascending</option>
+    <option value="model:desc">Model Descending</option>
+  </select>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+    <tr>
+      <th (click)="onSort('make')" style="cursor:pointer;">Make</th>
+      <th (click)="onSort('model')" style="cursor:pointer;">Model</th>
+      <th>Numberplate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{ car.make }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.numberplate }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="cars.length === 0" class="alert alert-warning mt-3" role="alert">
+    No cars found matching your criteria.
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-primary">Users List</h2>
+
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by name..."
+      [(ngModel)]="searchName" />
+    <button class="btn btn-primary" (click)="onSearch()">Search</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Search by ID..."
+      [(ngModel)]="searchId" />
+    <button class="btn btn-info" (click)="onSearchById()">Search by ID</button>
+  </div>
+
+  <label for="sortField" class="form-label">Sort by:</label>
+  <select
+    id="sortField"
+    class="form-select mb-3"
+    [(ngModel)]="sortField"
+    (change)="onSort(sortField)">
+    <option value="name:asc">Name Ascending</option>
+    <option value="name:desc">Name Descending</option>
+  </select>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+    <tr>
+      <th (click)="onSort('name')" style="cursor:pointer;">Name</th>
+      <th>Cars</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>
+        <ul class="list-unstyled">
+          <li *ngFor="let car of user.cars">
+            {{ car.make }} {{ car.model }} ({{ car.numberplate }})
+          </li>
+        </ul>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="users.length === 0" class="alert alert-warning mt-3" role="alert">
+    No users found matching your criteria.
+  </div>
+</div>
