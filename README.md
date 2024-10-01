@@ -1,27 +1,56 @@
-# ProovAngular
+# UserCarAppAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
 
-## Development server
+# Frontend Application - User and Car Management UI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is an Angular application that provides a user interface for managing users and their cars. It connects to a Spring Boot backend API to retrieve, display, and manage users and car data. The UI includes search and sort functionality for users and cars, with Bootstrap for responsive and modern styling.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ensure the following tools are installed on your machine:
 
-## Build
+- **Node.js** (version 14+)
+- **Angular CLI** (version 18+)
+- A package manager like **npm** (comes with Node.js) or **yarn**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Getting Started
 
-## Running unit tests
+### 1. Clone the Repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/rkaselt/proovAngular.git
+cd frontend-app
+```
 
-## Running end-to-end tests
+### 2. Install Dependencies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+or
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+yarn install
+```
+
+### 3. Run the Application
+
+```bash
+ng serve
+```
+
+### 4. Run the Application
+Use the browser to access the application at:
+```bash
+http://localhost:4200
+```
+
+## Available Features
+- Users List: View all users and their associated cars
+- Search Users: Search users by name
+- Sort Users: Sort users by name (ascending/descending) by clicking on the column name
+- Cars List: View all cars
+- Search Cars: Search cars by make or model
+- Sort Cars: Sort cars by make, model or numberplate (ascending/descending), by clicking on the column name
