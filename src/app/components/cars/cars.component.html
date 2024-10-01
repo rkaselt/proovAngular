@@ -6,7 +6,7 @@
       type="text"
       class="form-control"
       placeholder="Search by make..."
-      [(ngModel)]="searchMake" />
+      [(ngModel)]="searchMake"/>
     <button class="btn btn-primary" (click)="onSearch()">Search</button>
   </div>
 
@@ -15,28 +15,16 @@
       type="number"
       class="form-control"
       placeholder="Search by ID..."
-      [(ngModel)]="searchId" />
+      [(ngModel)]="searchId"/>
     <button class="btn btn-info" (click)="onSearchById()">Search by ID</button>
   </div>
-
-  <label for="sortField" class="form-label">Sort by:</label>
-  <select
-    id="sortField"
-    class="form-select mb-3"
-    [(ngModel)]="sortField"
-    (change)="onSort(sortField)">
-    <option value="make:asc">Make Ascending</option>
-    <option value="make:desc">Make Descending</option>
-    <option value="model:asc">Model Ascending</option>
-    <option value="model:desc">Model Descending</option>
-  </select>
 
   <table class="table table-bordered table-hover">
     <thead class="table-light">
     <tr>
       <th (click)="onSort('make')" style="cursor:pointer;">Make</th>
       <th (click)="onSort('model')" style="cursor:pointer;">Model</th>
-      <th>Numberplate</th>
+      <th (click)="onSort('numberplate')" style="cursor:pointer;">Numberplate</th>
     </tr>
     </thead>
     <tbody>

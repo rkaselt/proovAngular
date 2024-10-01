@@ -43,7 +43,7 @@ export class UserComponent implements OnInit {
           this.users = [user];
         },
         (error) => {
-          console.error('User not found', error);
+          //implement error logging
           this.users = [];
         }
       );

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {CarsComponent} from "./components/cars/cars.component";
 import {UserComponent} from "./components/user/user.component";
@@ -12,5 +12,4 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proovAngular';
 }

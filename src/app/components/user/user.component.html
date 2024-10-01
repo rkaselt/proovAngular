@@ -6,7 +6,7 @@
       type="text"
       class="form-control"
       placeholder="Search by name..."
-      [(ngModel)]="searchName" />
+      [(ngModel)]="searchName"/>
     <button class="btn btn-primary" (click)="onSearch()">Search</button>
   </div>
 
@@ -15,19 +15,9 @@
       type="number"
       class="form-control"
       placeholder="Search by ID..."
-      [(ngModel)]="searchId" />
+      [(ngModel)]="searchId"/>
     <button class="btn btn-info" (click)="onSearchById()">Search by ID</button>
   </div>
-
-  <label for="sortField" class="form-label">Sort by:</label>
-  <select
-    id="sortField"
-    class="form-select mb-3"
-    [(ngModel)]="sortField"
-    (change)="onSort(sortField)">
-    <option value="name:asc">Name Ascending</option>
-    <option value="name:desc">Name Descending</option>
-  </select>
 
   <table class="table table-bordered table-hover">
     <thead class="table-light">

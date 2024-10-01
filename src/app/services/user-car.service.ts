@@ -11,7 +11,8 @@ export class UserCarService {
 
   private apiUrl = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getUsers(find: string = '', sort: string = ''): Observable<any> {
     let params = new HttpParams();
@@ -21,7 +22,7 @@ export class UserCarService {
     if (sort) {
       params = params.set('sort', sort);
     }
-    return this.http.get(`${this.apiUrl}/users`, { params });
+    return this.http.get(`${this.apiUrl}/users`, {params});
   }
 
   getCars(find: string = '', sort: string = ''): Observable<any> {
@@ -32,7 +33,7 @@ export class UserCarService {
     if (sort) {
       params = params.set('sort', sort);
     }
-    return this.http.get(`${this.apiUrl}/cars`, { params });
+    return this.http.get(`${this.apiUrl}/cars`, {params});
   }
 
   getUserById(id: number): Observable<User> {

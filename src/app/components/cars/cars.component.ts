@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {UserCarService} from "../../services/user-car.service";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
@@ -18,7 +18,8 @@ export class CarsComponent implements OnInit {
   sortDirection: string = 'asc';
   searchId: number | null = null;
 
-  constructor(private userCarService: UserCarService) { }
+  constructor(private userCarService: UserCarService) {
+  }
 
   ngOnInit(): void {
     this.fetchCars();
@@ -35,14 +36,14 @@ export class CarsComponent implements OnInit {
     this.fetchCars();
   }
 
-  onSearchById() {
+  onSearchById(): void {
     if (this.searchId) {
       this.userCarService.getCarById(this.searchId).subscribe(
         (car) => {
           this.cars = [car];
         },
         (error) => {
-          console.error('Car not found', error);
+          //implement error logging
           this.cars = [];
         }
       );
