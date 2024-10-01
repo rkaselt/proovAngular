@@ -14,7 +14,7 @@ export class CarsComponent implements OnInit {
 
   cars: any[] = [];
   searchMake: string = '';
-  sortField: string = 'make:asc';
+  sortField: string = 'make';
   sortDirection: string = 'asc';
   searchId: number | null = null;
 
